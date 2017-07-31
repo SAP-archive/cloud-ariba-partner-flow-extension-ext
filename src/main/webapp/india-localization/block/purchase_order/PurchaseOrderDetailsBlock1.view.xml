@@ -1,0 +1,12 @@
+<!DOCTYPE XML>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:forms="sap.ui.layout.form"
+	xmlns:m="sap.m">
+	<forms:SimpleForm>
+		<m:Label text="Order ID" design="Bold" />
+		<m:Text
+			text="{/poEntity/poId}" />
+		<m:Label text="Order Type" design="Bold" />
+		<m:Text
+			text="{/poEntity/type}" />
+	</forms:SimpleForm>
+</mvc:View>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+	<persistence-unit name="com.sap.cloud.samples.ariba.partner.flow"
+		transaction-type="RESOURCE_LOCAL">
+		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>com.sap.cloud.samples.ariba.partner.flow.persistency.entities.Asn</class>
+		<class>com.sap.cloud.samples.ariba.partner.flow.persistency.entities.Po</class>
+		<class>com.sap.cloud.samples.ariba.partner.flow.persistency.entities.Country</class>
+		<class>com.sap.cloud.samples.ariba.partner.flow.persistency.entities.CountryCode</class>
+		<class>com.sap.cloud.samples.ariba.partner.flow.persistency.entities.PostalAddress</class>
+		<class>com.sap.cloud.samples.ariba.partner.flow.persistency.entities.AttachmentDocument</class>
+		<class>com.sap.cloud.samples.ariba.partner.flow.persistency.entities.ShipmentIdentifier</class>
+		<class>com.sap.cloud.samples.ariba.partner.flow.persistency.entities.Event</class>
+		<properties>
+			<property name="eclipselink.ddl-generation" value="create-or-extend-tables" />
+			<property name="eclipselink.logging.level" value="SEVERE" />
+		</properties>
+	</persistence-unit>
+</persistence>	

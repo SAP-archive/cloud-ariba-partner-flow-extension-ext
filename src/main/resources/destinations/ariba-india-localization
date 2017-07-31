@@ -1,0 +1,9 @@
+Type=HTTP
+Name=ariba-india-localization
+URL=<SAP Ariba Open APIs Environment Url e.g. https://openapi.ariba.com/api/discoveryrfx/v1/prod>
+Authentication=BasicAuthentication
+User=<SAP Ariba Open APIs Service Provider User>
+Password=<SAP Ariba Open APIs Service Provider Password>
+JobIntervalInSeconds=180
+FlowExtensionId=<Flow Extension ID>
+ApiKey=<API Key>

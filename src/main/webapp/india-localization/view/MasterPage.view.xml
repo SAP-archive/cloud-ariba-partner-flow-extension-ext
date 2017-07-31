@@ -1,0 +1,37 @@
+<!DOCTYPE XML>
+<mvc:View height="100%" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m"
+	xmlns:core="sap.ui.core"
+	controllerName="com.sap.cloud.samples.ariba.partner.flow.controller.MasterPage"
+	displayBlock="true">
+	<m:Page>
+		<m:headerContent>
+			<m:Toolbar>
+				<m:Title text="{i18n>AdvancedShipNoticeTitle}" width="100%" />
+				<m:Button icon="sap-icon://synchronize" press="onRefreshPress" />
+			</m:Toolbar>
+		</m:headerContent>
+		<m:subHeader>
+			<m:Toolbar>
+				<m:SearchField width="100%" liveChange="handleSearch" />
+			</m:Toolbar>
+		</m:subHeader>
+		<m:content>
+			<m:List id="itemsList" items="{path: '/'}" selectionChange="handleEventPress"
+				showSecondaryValues="true" mode="SingleSelectMaster" updateFinished="handleUpdateFinished">
+				<m:items>
+					<m:StandardListItem title="{supplierName}"
+						description="{poEntity/poId}" iconDensityAware="false" iconInset="false"
+						info="{poEntity/moneyAmount} {poEntity/moneyCurrency}" type="Navigation" />
+				</m:items>
+			</m:List>
+
+		</m:content>
+		<m:footer>
+			<m:Toolbar>
+				<m:ToolbarSpacer />
+				<m:Image src="india-localization/rsc/ariba-logo.png" height="30px" />
+				<m:ToolbarSpacer />
+			</m:Toolbar>
+		</m:footer>
+	</m:Page>
+</mvc:View>

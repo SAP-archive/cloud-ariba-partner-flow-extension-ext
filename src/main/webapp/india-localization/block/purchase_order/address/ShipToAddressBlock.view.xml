@@ -1,0 +1,27 @@
+<!DOCTYPE XML>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:forms="sap.ui.layout.form"
+	xmlns:m="sap.m">
+	<forms:SimpleForm>
+		<m:Toolbar>
+			<m:Title text="Ship To Address" />
+		</m:Toolbar>
+		<m:Label text="Street" design="Bold" />
+		<m:Text
+			text="{/poEntity/shipToAddressEntity/street}" />
+		<m:Label text="Postal Code" design="Bold" />
+		<m:Text
+			text="{/poEntity/shipToAddressEntity/postalCode}" />
+		<m:Label text="State" design="Bold" />
+		<m:Text
+			text="{/poEntity/shipToAddressEntity/state}" />
+		<m:Label text="Country" design="Bold" />
+		<m:Text
+			text="{/poEntity/shipToAddressEntity/countryEntity/countryName}, {/poEntity/shipToAddressEntity/countryEntity/isoCountryCode}" />
+		<m:Label text="City" design="Bold" />
+		<m:Text
+			text="{/poEntity/shipToAddressEntity/city}" />
+		<m:Label text="Deliver To" design="Bold" />
+		<m:Text
+			text="{/poEntity/shipToAddressEntity/deliverTo}" />
+	</forms:SimpleForm>
+</mvc:View>

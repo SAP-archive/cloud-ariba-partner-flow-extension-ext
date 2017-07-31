@@ -1,0 +1,22 @@
+<!DOCTYPE XML>
+<mvc:View height="95%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="com.sap.cloud.samples.ariba.partner.flow.controller.HomePage"
+	displayBlock="true">
+	<Page>
+		<headerContent>
+			<Toolbar>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Title text="India Localization" level="H3"></Title>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button icon="sap-icon://employee" text="{currentUser>/name}"
+					type="Transparent" press="handleActionSheetPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+			</Toolbar>
+		</headerContent>
+		<SplitApp id="splitApp">
+		</SplitApp>
+	</Page>
+</mvc:View>

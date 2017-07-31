@@ -1,0 +1,101 @@
+<!DOCTYPE XML>
+<mvc:View height="100%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:m="sap.m" xmlns="sap.uxap" xmlns:forms="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout" xmlns:u="sap.ui.unified"
+	xmlns:order="com.sap.cloud.samples.ariba.partner.flow.block.purchase_order"
+	xmlns:address="com.sap.cloud.samples.ariba.partner.flow.block.purchase_order.address"
+	xmlns:notice="com.sap.cloud.samples.ariba.partner.flow.block.ship_notice"
+	controllerName="com.sap.cloud.samples.ariba.partner.flow.controller.DetailsPage"
+	displayBlock="true">
+
+	<m:Page showHeader="false">
+		<ObjectPageLayout enableLazyLoading="false">
+			<headerTitle>
+				<ObjectPageHeader objectTitle="{/supplierName}" />
+			</headerTitle>
+			<headerContent>
+				<m:ObjectAttribute title="Order ID" text="{/poEntity/poId}" />
+			</headerContent>
+			<sections>
+				<ObjectPageSection title="{i18n>PurchaseOrderTitle}">
+					<subSections>
+						<ObjectPageSubSection mode="Expanded">
+							<blocks>
+								<order:PurchaseOrderDetailsBlock1 />
+								<order:PurchaseOrderDetailsBlock2 />
+								<address:BillToAddressBlock />
+								<address:ShipToAddressBlock />
+							</blocks>
+						</ObjectPageSubSection>
+					</subSections>
+				</ObjectPageSection>
+				<ObjectPageSection title="{i18n>AdvancedShipNoticeTitle}">
+					<subSections>
+						<ObjectPageSubSection mode="Expanded">
+							<blocks>
+								<notice:ShipNoticeDetails />
+								<notice:ShipControl />
+							</blocks>
+						</ObjectPageSubSection>
+					</subSections>
+				</ObjectPageSection>
+				<ObjectPageSection title="{i18n>AttachmentsTitle}">
+					<subSections>
+						<ObjectPageSubSection title="{i18n>AttachmentsTitle}"
+							mode="Expanded">
+							<blocks>
+								<m:UploadCollection id="UploadCollection" fileType="pdf, doc" multiple="true"
+									sameFilenameAllowed="false" instantUpload="false"
+									showSeparators="All" change="onChange" fileDeleted="onFileDeleted"
+									filenameLengthExceed="onFilenameLengthExceed" fileSizeExceed="onFileSizeExceed"
+									typeMissmatch="onTypeMissmatch" uploadComplete="onUploadComplete"
+									beforeUploadStarts="onBeforeUploadStarts" items="{/documents/}"
+									mode="MultiSelection" uploadButtonInvisible="{= RegExp('Resumed', 'i').test(${/status})}">
+									<m:toolbar>
+										<m:OverflowToolbar>
+											<m:Title text="{i18n>AttachmentsTitle}" />
+											<m:ToolbarSpacer />
+
+											<m:UploadCollectionToolbarPlaceholder></m:UploadCollectionToolbarPlaceholder>
+										</m:OverflowToolbar>
+									</m:toolbar>
+									<m:items>
+										<m:UploadCollectionItem documentId="{id}"
+											fileName="{name}" thumbnailUrl="{thumbnailUrl}"
+											url="/api/v1/events/eventId/download?path={path}"
+											visibleDelete="false">
+											<m:attributes>
+												<m:ObjectAttribute title="Last Modified By"
+													text="{lastModifiedBy}" />
+												<m:ObjectAttribute title="Last Modified On "
+													text="{	path: 'lastModificationDate',
+															type: 'sap.ui.model.type.Date',
+															formatOptions: {
+																style: 'full',
+																source: {
+																	pattern: 'timestamp'
+																}
+															}
+														}" />
+											</m:attributes>
+										</m:UploadCollectionItem>
+									</m:items>
+								</m:UploadCollection>
+							</blocks>
+						</ObjectPageSubSection>
+					</subSections>
+				</ObjectPageSection>
+			</sections>
+		</ObjectPageLayout>
+		<m:footer>
+			<m:Toolbar>
+				<m:ToolbarSpacer />
+				<m:Button text="Save" icon="sap-icon://save" press="onUploadPress"
+					type="Accept" visible="{= !RegExp('Resumed', 'i').test(${/status})}" />
+				<m:ObjectStatus icon="sap-icon://accept" text="Completed"
+					state="Success" visible="{= RegExp('Resumed', 'i').test(${/status})}"
+					class="sapUiSmallMargin"></m:ObjectStatus>
+			</m:Toolbar>
+		</m:footer>
+	</m:Page>
+</mvc:View>

@@ -1,0 +1,27 @@
+<!DOCTYPE XML>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:forms="sap.ui.layout.form"
+	xmlns:m="sap.m">
+	<forms:SimpleForm>
+		<m:Label text="Ship ID" design="Bold" />
+		<m:Text text="{/shipmentIdentifierEntity/identifier}" />
+		<m:Label text="Phone" design="Bold" />
+		<m:Text text="{/phoneEntity/number} - {/phoneEntity/name}" />
+		<m:Label text="Email" design="Bold" />
+		<m:Text text="{/email} - {/emailName}" />
+		<m:Label text="Street" design="Bold" />
+		<m:Text text="{/shipControlContactAddressEntity/street}" />
+		<m:Label text="Postal Code" design="Bold" />
+		<m:Text text="{/shipControlContactAddressEntity/postalCode}" />
+		<m:Label text="State" design="Bold" />
+		<m:Text text="{/shipControlContactAddressEntity/state}" />
+		<m:Label text="Country" design="Bold" />
+		<m:Text
+			text="{/shipControlContactAddressEntity/countryEntity/countryName}, {/shipControlContactAddressEntity/countryEntity/isoCountryCode}" />
+		<m:Label text="City" design="Bold" />
+		<m:Text text="{/shipControlContactAddressEntity/city}" />
+		<m:Label text="Deliver To" design="Bold" />
+		<m:Text text="{/shipControlContactAddressEntity/deliverTo}" />
+		<m:Label text="Route Method" design="Bold" />
+		<m:Text text="{/routeMethod}" />
+	</forms:SimpleForm>
+</mvc:View>

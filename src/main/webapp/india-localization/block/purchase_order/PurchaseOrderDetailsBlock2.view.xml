@@ -1,0 +1,26 @@
+<!DOCTYPE XML>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:forms="sap.ui.layout.form"
+	xmlns:m="sap.m">
+	<forms:SimpleForm>
+		<m:Label text="Order Date" design="Bold" />
+		<m:Text
+			text="{	path: '/poEntity/orderDate',
+					 	type: 'sap.ui.model.type.Date',
+						formatOptions: {
+							style: 'full',
+							source: {
+								pattern: 'timestamp'
+						}
+					}}" />
+		<m:Label text="Requested Delivery Date" design="Bold" />
+		<m:Text
+			text="{	path: '/poEntity/requestedDeliveryDate',
+					 	type: 'sap.ui.model.type.Date',
+						formatOptions: {
+							style: 'full',
+							source: {
+								pattern: 'timestamp'
+						}
+				}}" />
+	</forms:SimpleForm>
+</mvc:View>

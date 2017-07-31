@@ -1,0 +1,10 @@
+<!DOCTYPE XML>
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ActionSheet title="Choose Your Action" showCancelButton="true"
+		placement="Bottom">
+		<buttons>
+			<Button text="Log out" icon="sap-icon://log" press="handleLogoutUser"/>
+		</buttons>
+	</ActionSheet>
+</core:FragmentDefinition>

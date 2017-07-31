@@ -1,0 +1,20 @@
+<!DOCTYPE XML>
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:forms="sap.ui.layout.form"
+	xmlns:m="sap.m">
+	<forms:SimpleForm>
+		<m:Toolbar>
+			<m:Title text="Bill To Address" />
+		</m:Toolbar>
+		<m:Label text="Street" design="Bold" />
+		<m:Text text="{/poEntity/billToAddressEntity/street}" />
+		<m:Label text="Postal Code" design="Bold" />
+		<m:Text text="{/poEntity/billToAddressEntity/postalCode}" />
+		<m:Label text="State" design="Bold" />
+		<m:Text text="{/poEntity/billToAddressEntity/state}" />
+		<m:Label text="Country" design="Bold" />
+		<m:Text
+			text="{/poEntity/billToAddressEntity/countryEntity/countryName}, {/poEntity/billToAddressEntity/countryEntity/isoCountryCode}" />
+		<m:Label text="City" design="Bold" />
+		<m:Text text="{/poEntity/billToAddressEntity/city}" />
+	</forms:SimpleForm>
+</mvc:View>
