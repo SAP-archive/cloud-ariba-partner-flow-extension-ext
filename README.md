@@ -1,4 +1,5 @@
 # SAP Ariba India Localization
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-ariba-partner-flow-extension-ext)](https://api.reuse.software/info/github.com/SAP-samples/cloud-ariba-partner-flow-extension-ext)
 
 ## Content:
 
